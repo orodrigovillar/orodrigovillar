@@ -9,14 +9,18 @@ const ads = [
 ];
 const fs=require('fs');const FONT=fs.readFileSync(__dirname+'/anton.woff2').toString('base64');
 const photo=a=>fs.existsSync(`${__dirname}/photo-${a.id}.jpg`)?`url(data:image/jpeg;base64,${fs.readFileSync(`${__dirname}/photo-${a.id}.jpg`).toString('base64')}) center/cover`:null;
-const html=a=>`<style>@font-face{font-family:A;src:url(data:font/woff2;base64,${FONT})}</style><html><body style="margin:0"><div style="width:1080px;height:1350px;background:${photo(a)?'linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.15) 45%,rgba(0,0,0,.8)),'+photo(a):a.bg};font-family:A,Impact,sans-serif;color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:70px;box-sizing:border-box;position:relative;overflow:hidden">
-<div style="position:absolute;right:-180px;top:-180px;width:560px;height:560px;border-radius:50%;background:rgba(255,255,255,.06)"></div>
-<div style="font-size:60px;letter-spacing:1px;background:#fff;color:#111;display:inline-block;align-self:flex-start;padding:10px 22px;transform:rotate(-2deg)">${a.top}</div>
-<div style="font-size:150px;line-height:.98;text-transform:uppercase;background:rgba(0,0,0,.55);padding:24px 30px;transform:rotate(-1.5deg);text-shadow:0 6px 0 rgba(0,0,0,.4)">${a.big.replace(/<span>/g,'<span style="color:#ffd23f">')}</div>
-<div style="font-family:Arial,sans-serif;font-size:40px;line-height:1.3;color:#eef">${a.sub}</div>
-<div style="background:#22c55e;color:#062;border-radius:22px;font-size:64px;text-align:center;padding:26px;border:4px solid #bbf7d0;box-shadow:0 10px 0 #15803d;color:#fff">${a.cta}</div>
-<div style="font-family:Arial,sans-serif;font-size:26px;text-align:center;color:rgba(255,255,255,.75)">${a.foot}</div>
-</div></body></html>`;
+const html=a=>{const ph=photo(a);const hl=a.big.replace(/<br>/g,' ').replace(/<span>/g,'<span style="color:#ffd23f">');
+if(!ph) return `<style>@font-face{font-family:A;src:url(data:font/woff2;base64,${FONT})}</style><div style="width:1080px;height:1350px;background:${a.bg};font-family:A;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:70px;box-sizing:border-box;gap:40px"><div style="font-size:60px;background:#fff;color:#111;align-self:flex-start;padding:10px 22px">${a.top}</div><div style="font-size:140px;line-height:1">${hl}</div><div style="background:#22c55e;border-radius:22px;font-size:64px;text-align:center;padding:26px">${a.cta}</div></div>`;
+return `<style>@font-face{font-family:A;src:url(data:font/woff2;base64,${FONT})}</style>
+<div style="width:1080px;height:1350px;position:relative;overflow:hidden;font-family:A;color:#fff;background:#111">
+<div style="position:absolute;left:0;right:0;top:470px;bottom:0;background:${ph}"></div>
+<div style="position:absolute;left:0;right:0;top:0;height:520px;background:#111;clip-path:polygon(0 0,100% 0,100% 88%,0 100%)"></div>
+<div style="position:absolute;left:56px;right:56px;top:46px">
+<div style="font-size:54px;background:#ffd23f;color:#111;display:inline-block;padding:6px 20px;transform:rotate(-1.5deg)">${a.top}</div>
+<div style="font-size:${hl.replace(/<[^>]+>/g,'').length>32?96:112}px;line-height:1.02;margin-top:22px;text-transform:uppercase">${hl}</div></div>
+<div style="position:absolute;left:56px;right:56px;bottom:96px;background:#22c55e;border:4px solid #bbf7d0;border-radius:22px;font-size:62px;text-align:center;padding:22px;box-shadow:0 10px 0 #15803d">${a.cta}</div>
+<div style="position:absolute;left:0;right:0;bottom:34px;text-align:center;font-family:Arial;font-size:26px;color:#fff;text-shadow:0 2px 6px #000">${a.foot}</div>
+</div>`};
 (async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1350}});
 for(const a of ads){await p.setContent(html(a));await p.screenshot({path:`ad-${a.id}.png`});}
 await b.close();})();
