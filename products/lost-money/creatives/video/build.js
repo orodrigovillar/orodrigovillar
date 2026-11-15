@@ -1,10 +1,10 @@
 const { chromium } = require('playwright'); const fs=require('fs');
 const FONT=fs.readFileSync('anton.woff2').toString('base64');
-const DUR=42.8;
+const DUR=45.1;
 // speech segments [start,end,text]
-const seg=[[0,3.4,"An 88-year-old woman in Florida kept getting letters…"],[3.72,5.6,"saying she had unclaimed money."],[6.28,8.0,"She was sure it was a scam."],[8.35,9.85,"She even called the police."],[10.35,12.1,"But when a detective looked into it…"],[12.45,15.94,"he found a real notice from the state, buried in her junk mail."],[16.33,22.63,"About $108,000. Stock from a company she worked for over 30 years ago."],[23.13,24.81,"And here's what nobody tells you:"],[25.1,31.8,"states are holding about $70 billion just like this. About 1 in 7 Americans has some."],[32.35,39.27,"Most people never find theirs… because they only search one place. Tap below and take the 60-second check."],[39.68,41.76,"Some of it could have your name on it."]];
+const seg=[[0,3.42,"An 88-year-old woman in Florida kept getting letters…"],[3.80,5.72,"saying she had unclaimed money."],[6.44,8.17,"She was sure it was a scam."],[8.52,10.0,"She even called the police."],[10.56,12.31,"But when a detective looked into it…"],[12.69,14.70,"he found a real notice from the state,"],[15.0,16.31,"buried in her junk mail."],[16.73,23.28,"About $108,000. Stock from a company she worked for over 30 years ago."],[23.82,25.57,"And here's what nobody tells you:"],[25.83,30.05,"states are holding about $70 billion just like this."],[30.59,33.95,"33 million Americans have money waiting for them."],[34.47,38.59,"Most people never find theirs… because they only search one place."],[38.90,41.53,"Tap below and take the 60-second check."],[41.95,44.08,"Some of it could have your name on it."]];
 // headline per time range
-const heads=[[0,6.28,'SHE GOT LETTERS ABOUT<br><y>UNCLAIMED MONEY</y>'],[6.28,10.35,'SHE WAS SURE<br><y>IT WAS A SCAM</y>'],[10.35,16.33,'THEN A DETECTIVE<br><y>READ THE LETTER</y>'],[16.33,23.13,'IT WAS REAL:<br><y>$108,000</y>'],[23.13,32.35,''],[32.35,DUR,'IS THERE MONEY<br><y>IN YOUR NAME?</y>']];
+const heads=[[0,6.44,'SHE GOT LETTERS ABOUT<br><y>UNCLAIMED MONEY</y>'],[6.44,10.56,'SHE WAS SURE<br><y>IT WAS A SCAM</y>'],[10.56,16.73,'THEN A DETECTIVE<br><y>READ THE LETTER</y>'],[16.73,23.82,'IT WAS REAL:<br><y>$108,000</y>'],[23.82,34.47,''],[34.47,DUR,'IS THERE MONEY<br><y>IN YOUR NAME?</y>']];
 // caption chunks
 const chunks=[];
 for(const [s,e,t] of seg){const w=t.split(' ');const groups=[];let g=[];for(const x of w){g.push(x);if(g.join(' ').length>14||/[.…:,]$/.test(x)){groups.push(g.join(' '));g=[];}} if(g.length)groups.push(g.join(' '));
@@ -23,7 +23,7 @@ let list='';fs.mkdirSync('ov',{recursive:true});
 for(let i=0;i<P.length-1;i++){const t=(P[i]+P[i+1])/2;
  const h=(heads.find(x=>t>=x[0]&&t<x[1])||[0,0,''])[2];
  let c=(chunks.find(x=>t>=x[0]&&t<x[1])||[0,0,''])[2];
- c=c.replace(/(\$[\d,]+(?: billion)?|scam\.|police\.|real notice|1 in 7|60-second check)/gi,'<b>$1</b>');
+ c=c.replace(/(\$[\d,]+(?: billion)?|scam\.|police\.|real notice|33 million|60-second check)/gi,'<b>$1</b>');
  await p.setContent(`${css}<div class="h">${h}</div><div class="c">${c}</div><div class="src">As reported by FOX 13 Tampa · Sept. 2025</div>`);
  const f=`ov/${String(i).padStart(3,'0')}.png`;await p.screenshot({path:f,omitBackground:true});
  list+=`file '${f}'\nduration ${(P[i+1]-P[i]).toFixed(3)}\n`;}
@@ -32,6 +32,6 @@ fs.writeFileSync('ov.txt',list);
 // stat card + CTA card full frames
 await p.setContent(`${css}<div style="width:1080px;height:1920px;background:linear-gradient(160deg,#0b3d2c,#0f7b4f);font-family:A;color:#fff;display:flex;flex-direction:column;justify-content:flex-start;padding-top:330px;box-sizing:border-box;align-items:center;text-align:center;gap:34px">
 <div style="font-size:90px">STATES ARE HOLDING</div><div style="font-size:230px;color:#ffd23f;line-height:1">$70 BILLION</div><div style="font-size:90px">IN UNCLAIMED MONEY</div>
-<div style="font-size:70px;background:#fff;color:#111;padding:14px 34px;margin-top:40px">1 IN 7 AMERICANS HAS SOME</div><div style="font-family:Arial;font-size:30px;opacity:.8">Source: NAUPA</div></div>`);
+<div style="font-size:62px;line-height:1.1;background:#fff;color:#111;padding:16px 30px;margin:40px 70px 0">33 MILLION AMERICANS<br>HAVE MONEY WAITING</div><div style="font-family:Arial;font-size:30px;opacity:.8">Source: NAUPA</div></div>`);
 await p.screenshot({path:'stat.png'});
 await b.close();})();

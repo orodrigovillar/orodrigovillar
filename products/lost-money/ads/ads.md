@@ -75,7 +75,7 @@ A detective looked into it, and found a real notice from the state sitting in he
 
 It was stock from a company she'd worked for 30+ years earlier. About $108,000. Claimed for free, on the state's official website. (Reported by FOX 13 Tampa)
 
-Here's the thing: states hold about $70 billion like this. About 1 in 7 Americans has some.
+Here's the thing: states hold about $70 billion like this. 33 million Americans have money waiting for them.
 
 Most never find it, because they don't know where to look.
 
