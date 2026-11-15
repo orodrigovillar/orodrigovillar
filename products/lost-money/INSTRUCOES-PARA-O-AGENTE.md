@@ -78,6 +78,14 @@ Seguir `ads/ads.md`. Resumo:
 - Botão do anúncio: **Learn More**. Criar tudo **PAUSADO**, revisar, e só então ativar.
 - **Não mexer por 3 dias.** Depois: conjunto que gastou US$ 30 sem venda → pausar. ROAS ≥ 1,8 por 3 dias → +20% de orçamento a cada 48h.
 
+
+### Teste A/B das páginas (claro x escuro)
+- **Versão A (clara):** `https://SEUSITE/?s=fl` (index.html)
+- **Versão B (preta e dourada):** `https://SEUSITE/b.html?s=fl`
+- Duplicar cada conjunto: um anúncio aponta para A, a cópia idêntica aponta para B (trocar só a URL). Mesmo orçamento.
+- Depois de 3–5 dias, comparar **custo por compra** de A vs B. Ficar com a vencedora e pausar a outra.
+- Os links de checkout, Pixel e e-mail precisam ser trocados nos DOIS arquivos (index.html e b.html).
+
 ## ETAPA 7 — Relatório
 A cada 3 dias, exportar do Gerenciador de Anúncios (por anúncio): gasto, impressões, CTR, custo por clique, compras, custo por compra, ROAS. Mandar esses números para análise e decisão do que cortar e escalar.
 
