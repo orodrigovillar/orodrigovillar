@@ -15,7 +15,7 @@
 - **Cuidado com direitos autorais** é prioridade explícita do dono.
 
 ## 2. O que já existe neste repositório
-- `dbcooper-amostra/` — amostra de 3min11s em **PT-BR** sobre o caso D.B. Cooper (aprovação de estilo pendente).
+- `dbcooper-amostra/` — amostra de 3min11s em **PT-BR** sobre o caso D.B. Cooper. **ESTILO APROVADO pelo dono ("amei")** — usar como padrão de qualidade e identidade visual dos vídeos (variando estrutura entre vídeos).
   - `roteiro.json` — roteiro em 8 segmentos.
   - `audio/` — narração ElevenLabs (voz "Nassif - Documentary, History & Thriller", modelo eleven_v4), música, SFX.
   - `img/` — 27 stills gerados (GPT-Image via ElevenLabs). `vid/` (ignorado no git) tinha 5 clipes Kling.
