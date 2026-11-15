@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Lost Money Playbook</title>
+<style>
+  @page { size: Letter; margin: 0.7in 0.75in; }
+  :root { --ink:#1b1f24; --muted:#5b6470; --green:#0f7b4f; --gold:#c99a2e; --bg:#f6f4ee; }
+  * { box-sizing: border-box; }
+  body { font-family: Georgia, "Times New Roman", serif; color: var(--ink); font-size: 11.5pt; line-height: 1.55; margin:0; }
+  h1,h2,h3,.sans { font-family: "Helvetica Neue", Arial, sans-serif; }
+  h1 { font-size: 30pt; line-height:1.1; margin:0 0 .3em; }
+  h2 { font-size: 19pt; color: var(--green); margin: 0 0 .6em; padding-top: .2em; border-bottom: 3px solid var(--gold); padding-bottom:.25em; }
+  h3 { font-size: 13pt; margin: 1.3em 0 .4em; }
+  .chapter { page-break-before: always; }
+  .cover { height: 9.4in; display:flex; flex-direction:column; justify-content:center; background: linear-gradient(160deg,#0f3d2e 0%,#0f7b4f 100%); color:#fff; padding: .8in; margin:-0.7in -0.75in 0; }
+  .cover .kicker { letter-spacing:.2em; text-transform:uppercase; color:#f3d27a; font-size:11pt; }
+  .cover h1 { font-size: 44pt; color:#fff; }
+  .cover p { font-size: 15pt; color:#e6f2ec; max-width: 5.5in; }
+  .box { background: var(--bg); border-left: 5px solid var(--green); padding: .7em 1em; margin: 1em 0; }
+  .warn { background:#fff4e5; border-left-color:#d9822b; }
+  .step { display:flex; gap:.8em; margin:.7em 0; }
+  .step b.n { flex:none; width:1.8em; height:1.8em; border-radius:50%; background:var(--green); color:#fff; display:flex; align-items:center; justify-content:center; font-family:Arial; }
+  table { width:100%; border-collapse: collapse; font-size: 10pt; margin: .8em 0; font-family: Arial, sans-serif; }
+  th, td { border: 1px solid #cfd4da; padding: 5px 7px; text-align:left; vertical-align: top; }
+  th { background: #e8efe9; }
+  .tpl { font-family: "Courier New", monospace; font-size: 9.5pt; background:#fbfbf8; border:1px dashed #9aa; padding: .8em 1em; white-space: pre-wrap; }
+  .check td:first-child { width: 22px; }
+  .small { font-size: 9pt; color: var(--muted); }
+  ul li, ol li { margin: .25em 0; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="kicker sans">The 30-Minute Search Method</div>
+  <h1>The Lost Money Playbook</h1>
+  <p>How to find money that already belongs to you or your family: forgotten accounts, uncashed checks, old refunds, life insurance, savings bonds, pensions and settlement payouts. Step by step, state by state.</p>
+  <p class="small" style="color:#cfe3d9;margin-top:2em">Independent guide. Not affiliated with any government agency. Searching official databases is always free. This guide shows you where to look, how to search correctly and how to file your claim.</p>
+</section>
+
+<section class="chapter">
+  <h2>Before You Start: Read This</h2>
+  <p>Every year, banks, employers, insurers and utility companies lose track of people. When they can't reach the owner, the law requires them to send that money to the state. The state then holds it, sometimes forever, until the owner or their heirs claim it.</p>
+  <p>According to the National Association of Unclaimed Property Administrators (NAUPA), U.S. states hold about <b>$70 billion</b> in unclaimed property, about <b>1 in 7 Americans</b> has some, and states returned roughly <b>$4.49 billion</b> to owners in fiscal year 2024 alone.</p>
+  <div class="box">
+    <b>Three promises this guide makes you:</b>
+    <ol>
+      <li>Every place we send you is an official or long-established source.</li>
+      <li>You will never need to pay anyone to claim your own money. Official claims are free.</li>
+      <li>In about 30 minutes, you will have searched every major database where money in your name could be sitting.</li>
+    </ol>
+  </div>
+  <div class="box warn"><b>Honest expectation:</b> not everyone has money waiting. Many people find something, from a few dollars to several thousand, and some find nothing. The only way to know is to search properly, which is what this playbook makes fast and complete.</div>
+
+  <h3>What you need on the table</h3>
+  <ul>
+    <li>Your full legal name, plus <b>every name you've used</b> (maiden name, nicknames, misspellings).</li>
+    <li>Every <b>state</b> you've lived or worked in, and your previous addresses.</li>
+    <li>Names of parents, grandparents or spouses who have passed away (you may be an heir).</li>
+    <li>The Search Tracker at the end of this guide (print it or copy it).</li>
+  </ul>
+</section>
+
+<section class="chapter">
+  <h2>Chapter 1: Where Lost Money Hides</h2>
+  <table>
+    <tr><th>Type of money</th><th>Why it gets lost</th><th>Where it ends up</th></tr>
+    <tr><td>Old checking/savings accounts</td><td>Account inactive for 3–5 years, you moved</td><td>State unclaimed property office</td></tr>
+    <tr><td>Final paychecks</td><td>You left a job and the check went to an old address</td><td>State unclaimed property office</td></tr>
+    <tr><td>Utility &amp; rental deposits</td><td>Deposit refund never reached you</td><td>State unclaimed property office</td></tr>
+    <tr><td>Insurance refunds &amp; life insurance</td><td>Beneficiary never knew the policy existed</td><td>Insurer or state office</td></tr>
+    <tr><td>Stocks, dividends, mutual funds</td><td>Shareholder lost contact</td><td>State office (often sold and held as cash)</td></tr>
+    <tr><td>Safe deposit box contents</td><td>Rent unpaid, owner unreachable</td><td>State office (items or auction proceeds)</td></tr>
+    <tr><td>Federal tax refunds</td><td>Return never filed, or check returned</td><td>IRS</td></tr>
+    <tr><td>Savings bonds</td><td>Matured, never cashed</td><td>U.S. Treasury</td></tr>
+    <tr><td>Pensions</td><td>Employer closed or plan ended</td><td>PBGC or plan administrator</td></tr>
+    <tr><td>Back wages</td><td>Employer paid owed wages to the Department of Labor</td><td>U.S. Department of Labor</td></tr>
+    <tr><td>Settlement &amp; refund payouts</td><td>Class actions and FTC refunds you never claimed</td><td>Settlement administrators, FTC</td></tr>
+  </table>
+</section>
+
+<section class="chapter">
+  <h2>Chapter 2: The 30-Minute Search (State Money)</h2>
+  <p>This is where most people find money. Do it first.</p>
+  <div class="step"><b class="n">1</b><div><b>Go to MissingMoney.com</b>, the multi-state database endorsed by NAUPA. It searches most participating states at once. Enter your last name and first name, and leave city blank on the first pass.</div></div>
+  <div class="step"><b class="n">2</b><div><b>Repeat for every name variation.</b> Maiden name, middle name as first name, common misspellings (e.g. "Jon/John", "Mc/Mac"). Businesses misspell names all the time.</div></div>
+  <div class="step"><b class="n">3</b><div><b>Search each state directly.</b> Not every state shows everything on MissingMoney. Go to <b>unclaimed.org</b>, click your state, and use that state's own search. Do this for <b>every state</b> you've lived, worked, banked or owned property in.</div></div>
+  <div class="step"><b class="n">4</b><div><b>Search for family members.</b> Search the names of deceased parents, grandparents and spouses in the states where they lived. Heirs can claim, and this is where the biggest amounts are often found.</div></div>
+  <div class="step"><b class="n">5</b><div><b>Search your business names</b> if you've ever had a business, LLC or side business.</div></div>
+  <div class="step"><b class="n">6</b><div><b>Write every result</b> in your Search Tracker: state, amount (or "over $100"), holder name and claim ID.</div></div>
+  <div class="box"><b>Pro tip:</b> Many states only show "Over $100" instead of the exact amount. Claim it anyway. You'll see the real value when it's paid.</div>
+</section>
+
+<section class="chapter">
+  <h2>Chapter 3: Federal Money Most People Never Check</h2>
+  <h3>1. Unclaimed federal tax refunds (IRS)</h3>
+  <p>If you didn't file a return in a year you had taxes withheld, you may be owed a refund. Generally you have <b>3 years</b> from the original due date to file and claim it. Check refund status with the IRS "Where's My Refund?" tool at irs.gov, and if you moved, update your address with IRS Form 8822 so returned checks can be reissued.</p>
+  <h3>2. Matured savings bonds (U.S. Treasury)</h3>
+  <p>Paper savings bonds stop earning interest at maturity, and millions were never cashed. Go to <b>TreasuryDirect.gov</b> and use its current tool or instructions for finding matured or lost bonds. If you know bonds existed but the paper is lost, Treasury can replace them: file <b>FS Form 1048</b> (claim for lost, stolen or destroyed savings bonds). Ask older relatives whether bonds were bought for you as a child, and check family safe deposit boxes: in one Ohio case reported by FOX 8, a family recovered hundreds of their parents' savings bonds that had been turned over to the state.</p>
+  <h3>3. Forgotten pensions (PBGC)</h3>
+  <p>If you or a deceased parent worked for a company whose pension plan ended, search the <b>Pension Benefit Guaranty Corporation</b> unclaimed pensions directory at pbgc.gov.</p>
+  <h3>4. Back wages (U.S. Department of Labor)</h3>
+  <p>When employers are found to owe workers wages, the money may be held by the DOL. Search the <b>Workers Owed Wages (WOW)</b> tool on dol.gov.</p>
+  <h3>5. FHA mortgage insurance refunds (HUD)</h3>
+  <p>If you had an FHA-insured mortgage and paid it off early, you may be owed part of your upfront premium. Search "FHA refund" on hud.gov and use HUD's case-number lookup.</p>
+  <h3>6. Failed bank deposits (FDIC)</h3>
+  <p>If you had an account at a bank that failed, check the FDIC's unclaimed funds search on fdic.gov.</p>
+  <h3>7. Veterans' life insurance (VA)</h3>
+  <p>The Department of Veterans Affairs holds unclaimed life insurance funds for veterans' beneficiaries. Search on va.gov for "unclaimed insurance funds".</p>
+</section>
+
+<section class="chapter">
+  <h2>Chapter 4: Life Insurance You Didn't Know About</h2>
+  <p>Many beneficiaries never learn that a parent or spouse had a policy. If someone close to you has died, do this:</p>
+  <ol>
+    <li>Use the <b>NAIC Life Insurance Policy Locator</b> (search "NAIC policy locator"). It's free. Insurers check their records against your request and contact you if you're a beneficiary.</li>
+    <li>Search the deceased person's name in state unclaimed property databases (Chapter 2). Insurers turn over unpaid death benefits to the state.</li>
+    <li>Look through old paperwork for premium bills, bank statements showing insurance payments, and employer benefit papers.</li>
+    <li>Contact former employers' HR departments: many jobs included group life insurance.</li>
+  </ol>
+</section>
+
+<section class="chapter">
+  <h2>Chapter 5: Settlements &amp; Refunds You're Owed Right Now</h2>
+  <p>Companies regularly settle lawsuits or are ordered to refund customers. Most eligible people never file.</p>
+  <ul>
+    <li><b>FTC refunds:</b> the Federal Trade Commission lists active refund programs at ftc.gov/refunds. If you get a payment, it comes from the FTC or an administrator, and <b>they never ask you to pay to receive it</b>.</li>
+    <li><b>Class action settlements:</b> check settlement websites for products and services you've used (phones, apps, banks, cars, data breaches). Claims are usually filed online in minutes, often without proof of purchase for small amounts.</li>
+    <li><b>Data breach settlements:</b> if you've received a breach notice letter, check whether a settlement exists for that breach.</li>
+  </ul>
+  <div class="box">Set a reminder to check every 3 months. New settlements open constantly.</div>
+</section>
+
+<section class="chapter">
+  <h2>Chapter 6: How to File a Claim (and Get Paid Faster)</h2>
+  <div class="step"><b class="n">1</b><div>Click <b>"Claim"</b> on the state's official site next to your result. Add all your results from that state to one claim when possible.</div></div>
+  <div class="step"><b class="n">2</b><div>Prove identity: usually a photo ID and your Social Security number, sometimes proof of the address shown on the record (an old bill, lease or tax return).</div></div>
+  <div class="step"><b class="n">3</b><div>Small claims are often approved fast, sometimes with no paperwork. Larger amounts take longer and need more documents.</div></div>
+  <div class="step"><b class="n">4</b><div>Save the claim number and check status every 2–3 weeks. Processing typically takes weeks to a few months depending on the state and amount.</div></div>
+  <h3>Claiming for a deceased relative</h3>
+  <p>You'll typically need: the death certificate, proof of your relationship (birth or marriage certificates), and either estate documents (letters of administration) or the state's small-estate affidavit. Requirements vary by state. Read the instructions on the claim page and call the state office if you're unsure. They help for free.</p>
+</section>
+
+<section class="chapter">
+  <h2>Chapter 7: Avoid the Scams</h2>
+  <ul>
+    <li>Official claims are <b>always free</b>. Anyone charging a fee "to release" your money is a red flag.</li>
+    <li>Government agencies don't contact you by social media, text or gift card requests.</li>
+    <li>"Finders" who contact you offering to recover money for a percentage are legal in many states, but fees are often capped by law, and you can almost always do it yourself, free, with this guide.</li>
+    <li>Only enter your Social Security number on official .gov sites or the state's official claim portal linked from unclaimed.org.</li>
+  </ul>
+</section>
+
+<section class="chapter">
+  <h2>Templates</h2>
+  <h3>Template 1: Letter to a former employer (missing final paycheck / benefits)</h3>
+  <div class="tpl">[Date]
+
+[Company name]
+Attn: Payroll / Human Resources
+[Address]
+
+Re: Request for final wages and benefits records — [Your full name], employed [start]–[end]
+
+To whom it may concern,
+
+I was employed by [Company] as [job title] from [start date] to [end date]. I am requesting confirmation of whether any final wages, unused vacation pay, bonus, retirement plan balance or group life insurance benefits remain unpaid in my name.
+
+If any amount was issued and returned undelivered, please let me know whether it was reported to a state unclaimed property office and which state.
+
+My current contact information is:
+[Address] | [Phone] | [Email]
+
+Thank you,
+[Name]</div>
+
+  <h3>Template 2: Request to an insurance company (possible beneficiary)</h3>
+  <div class="tpl">[Date]
+
+[Insurance company]
+Attn: Claims Department
+
+Re: Possible policy for [Deceased's full name], DOB [date], date of death [date]
+
+I believe I may be a beneficiary of a life insurance or annuity policy held by [deceased's name], my [relationship]. Please search your records for any policy, annuity or account in this name or Social Security number ending in [last 4].
+
+Enclosed: copy of death certificate and proof of my relationship.
+
+Please contact me at: [Address] | [Phone] | [Email]
+
+Sincerely,
+[Name]</div>
+
+  <h3>Template 3: Follow-up on a pending state claim</h3>
+  <div class="tpl">Hello,
+
+I submitted claim #[number] on [date] for property in the name of [name]. Could you please confirm whether any documents are missing and the expected processing time?
+
+Thank you,
+[Name] | [Phone]</div>
+</section>
+
+<section class="chapter">
+  <h2>Your Search Tracker</h2>
+  <p class="small">Print this page. Check every box. Most people who skip a step skip the one where their money was.</p>
+  <table class="check">
+    <tr><th></th><th>Search</th><th>Names searched</th><th>Found?</th><th>Amount / Claim #</th></tr>
+    <tr><td>☐</td><td>MissingMoney.com</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>State #1 site (via unclaimed.org)</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>State #2 site</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>State #3 site</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>Deceased parent #1 (all their states)</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>Deceased parent #2 / spouse</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>TreasuryDirect: matured / lost savings bonds</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>IRS refund status</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>PBGC unclaimed pensions</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>DOL Workers Owed Wages</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>HUD FHA refund</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>FDIC failed bank funds</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>VA unclaimed insurance (veterans)</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>NAIC Life Insurance Policy Locator</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>FTC refunds + class action settlements</td><td></td><td></td><td></td></tr>
+    <tr><td>☐</td><td>Business / LLC names</td><td></td><td></td><td></td></tr>
+  </table>
+  <p class="small">Set a calendar reminder to repeat this search every 6 months. New money is reported to states every year.</p>
+  <p class="small">Disclaimer: This guide is educational and is not legal, tax or financial advice. Not affiliated with NAUPA, MissingMoney.com, any state, or any U.S. government agency. Results vary; many people find no unclaimed property. Website names and tools may change over time.</p>
+</section>
+
+</body>
+</html>
