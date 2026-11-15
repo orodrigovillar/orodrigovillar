@@ -24,7 +24,7 @@ for(let i=0;i<P.length-1;i++){const t=(P[i]+P[i+1])/2;
  const h=(heads.find(x=>t>=x[0]&&t<x[1])||[0,0,''])[2];
  let c=(chunks.find(x=>t>=x[0]&&t<x[1])||[0,0,''])[2];
  c=c.replace(/(\$[\d,]+(?: billion)?|scam\.|police\.|real notice|1 in 7|60-second check)/gi,'<b>$1</b>');
- await p.setContent(`${css}<div class="h">${h}</div><div class="c">${c}</div><div class="src">Story as reported by FOX 13 Tampa, Sept. 2025 · Images are dramatizations</div>`);
+ await p.setContent(`${css}<div class="h">${h}</div><div class="c">${c}</div><div class="src">As reported by FOX 13 Tampa · Sept. 2025</div>`);
  const f=`ov/${String(i).padStart(3,'0')}.png`;await p.screenshot({path:f,omitBackground:true});
  list+=`file '${f}'\nduration ${(P[i+1]-P[i]).toFixed(3)}\n`;}
 list+=`file 'ov/${String(P.length-2).padStart(3,'0')}.png'\n`;
