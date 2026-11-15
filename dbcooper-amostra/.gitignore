@@ -1,0 +1,5 @@
+# arquivos pesados/gerados (regeneraveis)
+render/
+vid/
+assets/land.geojson
+scripts/status.json
