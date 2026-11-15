@@ -62,6 +62,18 @@
   <div id="qbox"></div>
 </div>
 
+<div class="card hidden" id="lead">
+  <div class="kicker">Almost done</div>
+  <p class="q">Where should we send your result + your free "3 places to search first" checklist?</p>
+  <form id="leadform">
+    <input name="fields[name]" placeholder="First name" style="width:100%;padding:15px;font-size:17px;border:2px solid var(--line);border-radius:10px;margin:6px 0">
+    <input name="fields[email]" type="email" required placeholder="Email address" style="width:100%;padding:15px;font-size:17px;border:2px solid var(--line);border-radius:10px;margin:6px 0 12px">
+    <button class="btn" type="submit">SHOW MY RESULT →</button>
+  </form>
+  <p style="text-align:center;margin:12px 0 0"><a href="#" id="skip" style="color:var(--muted);font-size:14px">Skip, just show my result</a></p>
+  <p style="font-size:12px;color:var(--muted);text-align:center">No spam. Unsubscribe anytime. <a href="privacy.html" style="color:var(--muted)">Privacy</a></p>
+</div>
+
 <div class="card hidden" id="loading" style="text-align:center">
   <p class="q">Checking your answers…</p>
   <p id="lstep" style="color:var(--muted)">Comparing with the most common unclaimed property types</p>
@@ -157,9 +169,23 @@ function render(){
     it.o.map((o,k)=>'<button class="opt" data-k="'+k+'">'+o[0]+'</button>').join('');
   qbox.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{score+=it.o[+b.dataset.k][1];i++;i<Q.length?render():finish();});
 }
+// MAILERLITE: cole aqui a URL "action" do formulário embutido do MailerLite
+const LEAD_ACTION='MAILERLITE_FORM_ACTION_URL';
 function finish(){
   pg.style.width='100%';
   document.getElementById('quiz').classList.add('hidden');
+  document.getElementById('lead').classList.remove('hidden');
+  const go=()=>{document.getElementById('lead').classList.add('hidden');showResult();};
+  document.getElementById('skip').onclick=e=>{e.preventDefault();go();};
+  document.getElementById('leadform').onsubmit=e=>{
+    e.preventDefault();
+    const fd=new FormData(e.target);fd.append('fields[quiz_score]',score);
+    if(LEAD_ACTION.startsWith('http'))fetch(LEAD_ACTION,{method:'POST',body:fd,mode:'no-cors'}).catch(()=>{});
+    if(window.fbq)fbq('track','Lead');
+    go();
+  };
+}
+function showResult(){
   const L=document.getElementById('loading');L.classList.remove('hidden');
   const steps=["Checking state-move patterns…","Checking job-change patterns…","Checking family & inheritance factors…"];
   steps.forEach((s,k)=>setTimeout(()=>document.getElementById('lstep').textContent=s,700*(k+1)));
@@ -170,7 +196,7 @@ function finish(){
       ? "<b>You have several of the most common reasons money goes unclaimed.</b> People with your profile should search more than one state and include family members, exactly what the Playbook walks you through."
       : "<b>You have some common risk factors.</b> Even one move or one job change can leave a check behind. A complete search takes about 30 minutes.";
     document.getElementById('offer').classList.remove('hidden');
-    if(window.fbq)fbq('track','Lead');
+    if(window.fbq)fbq('track','ViewContent');
     window.scrollTo({top:0,behavior:'smooth'});
   },2900);
 }

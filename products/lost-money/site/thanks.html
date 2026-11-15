@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>You're in! Here's what to do next</title>
+<meta name="description" content="Take the 60-second check and learn exactly where to search for unclaimed money in your name or your family's.">
+<!-- META PIXEL: cole aqui o código do Pixel (PageView) -->
+<style>
+  :root{--ink:#14181d;--muted:#5d6670;--green:#0f7b4f;--green2:#0a5c3b;--gold:#f2b632;--bg:#f7f6f1;--card:#fff;--line:#e3e1d8}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+  .wrap{max-width:720px;margin:0 auto;padding:0 16px}
+  .bar{background:#14181d;color:#fff;text-align:center;font-size:14px;padding:8px 16px}
+  header{padding:28px 0 8px;text-align:center}
+  .kicker{color:var(--green);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:13px}
+  h1{font-size:clamp(28px,6vw,44px);line-height:1.1;margin:.3em 0}
+  h1 em{font-style:normal;background:linear-gradient(transparent 60%,#ffe08a 60%)}
+  h2{font-size:clamp(22px,4.6vw,30px);line-height:1.2;margin:1.6em 0 .6em}
+  .sub{font-size:18px;color:#333}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:18px 0;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .btn{display:block;width:100%;border:0;border-radius:12px;background:var(--green);color:#fff;font-size:19px;font-weight:800;padding:18px;cursor:pointer;text-align:center;text-decoration:none;box-shadow:0 4px 0 var(--green2)}
+  .btn:active{transform:translateY(2px);box-shadow:0 2px 0 var(--green2)}
+  .opt{display:block;width:100%;text-align:left;background:#fff;border:2px solid var(--line);border-radius:10px;padding:14px 16px;margin:8px 0;font-size:17px;cursor:pointer}
+  .opt:hover{border-color:var(--green)}
+  .progress{height:8px;background:#e8e6dd;border-radius:9px;overflow:hidden;margin-bottom:14px}
+  .progress i{display:block;height:100%;background:var(--green);width:0;transition:width .3s}
+  .q{font-size:21px;font-weight:700;margin:4px 0 10px}
+  .hidden{display:none}
+  .score{font-size:56px;font-weight:900;color:var(--green);text-align:center;line-height:1}
+  .stat{display:flex;gap:12px;flex-wrap:wrap}
+  .stat div{flex:1 1 180px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+  .stat b{display:block;font-size:26px;color:var(--green)}
+  ul.check{list-style:none;padding:0}
+  ul.check li{padding:8px 0 8px 32px;position:relative;border-bottom:1px solid var(--line)}
+  ul.check li:before{content:"✓";position:absolute;left:4px;color:var(--green);font-weight:900}
+  .price{text-align:center}
+  .price s{color:#999;font-size:22px}
+  .price .now{font-size:60px;font-weight:900;color:var(--ink);line-height:1}
+  .story{border-left:4px solid var(--gold);padding:4px 0 4px 14px;margin:16px 0}
+  .story small{color:var(--muted)}
+  .guar{display:flex;gap:16px;align-items:center}
+  .seal{flex:none;width:86px;height:86px;border-radius:50%;background:var(--gold);color:#3a2a00;font-weight:900;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;line-height:1.1}
+  details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:8px 0}
+  summary{font-weight:700;cursor:pointer}
+  footer{font-size:12px;color:var(--muted);padding:30px 0 50px}
+</style>
+<!-- META PIXEL: cole aqui o mesmo código do Pixel -->
+</head>
+<body>
+<div class="wrap">
+<header><div class="kicker">Order confirmed</div><h1>You're in. <em>Let's find your money.</em></h1>
+<p class="sub">Your download link is on its way to your email (check spam/promotions). It comes from Hotmart, our payment provider.</p></header>
+<div class="card"><h2 style="margin-top:0">Do this tonight (30 minutes)</h2>
+<ol style="font-size:17px;line-height:1.7"><li>Open the Playbook and grab the <b>Search Tracker</b> (last page).</li><li>Write down every state you've lived or worked in, and every name you've used.</li><li>Do the <b>30-Minute Search</b> in Chapter 2.</li><li>If a parent or spouse has passed away, search their name too.</li></ol></div>
+<div class="card"><h2 style="margin-top:0">Help your family search too</h2>
+<p>Parents, siblings, in-laws: almost everyone has moved, changed jobs or lost someone. Send them this page so they can check their own names:</p>
+<a class="btn" href="#" onclick="var u=location.href.replace(/[^/]*$/,'');if(navigator.share){navigator.share({title:'Is there money in your name?',url:u})}else{navigator.clipboard.writeText(u);this.textContent='LINK COPIED ✓'}return false;">SHARE WITH FAMILY</a></div>
+<p style="text-align:center;color:var(--muted)">Questions? Email support@YOURDOMAIN.com</p>
+<footer><p>Independent educational product. Not affiliated with any government agency. Searching for and claiming unclaimed property through official sites is free. Results vary.</p><p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a></p></footer></div></body></html>
