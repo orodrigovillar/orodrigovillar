@@ -35,7 +35,7 @@ Searching official databases is always free. We show you exactly where and how.
 
 ## Texto principal B — Família / herança
 
-Did your mom, dad or grandparents pass away?
+When a parent or grandparent passes away, money they left can go unclaimed.
 
 There may be money they left behind that no one ever claimed: life insurance, an old savings account, savings bonds, a pension.
 
@@ -89,7 +89,7 @@ The Lost Money Playbook shows you every place to search, in about 30 minutes.
 ## Headlines extras (testar)
 - Your last paycheck may still be out there
 - Grandma's savings bonds may still be uncashed
-- Moved in the last 10 years? Read this
+- Money often gets lost when people move
 - Most people search one website. That's the mistake.
 - The money the state is holding for you
 

@@ -19,3 +19,4 @@
 - 1 em cada 7 americanos tem unclaimed property (unclaimed.org)
 - Estados devolveram US$ 4,49 bi no FY2024 (NAUPA FY2024)
 - Média de resgate ~US$ 2.080 (NAUPA via CNBC 2023) — **mediana ~US$ 100** (NAUPA FY20). Não usar a média sem a mediana.
+- 33 milhões = '1 em 7 americanos, cerca de 33 milhões' (NAUPA via CNBC/NBC LA, 2023). Na página citar '(NAUPA, via CNBC)'.

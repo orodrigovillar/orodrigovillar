@@ -12,48 +12,64 @@
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
   .wrap{max-width:720px;margin:0 auto;padding:0 16px}
   .bar{background:#14181d;color:#fff;text-align:center;font-size:14px;padding:8px 16px}
-  header{padding:28px 0 8px;text-align:center}
+  header{padding:24px 0 4px;text-align:center}
   .kicker{color:var(--green);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:13px}
   h1{font-size:clamp(28px,6vw,44px);line-height:1.1;margin:.3em 0}
   h1 em{font-style:normal;background:linear-gradient(transparent 60%,#ffe08a 60%)}
   h2{font-size:clamp(22px,4.6vw,30px);line-height:1.2;margin:1.6em 0 .6em}
-  .sub{font-size:18px;color:#333}
+  .sub{font-size:18px;color:#333;margin:.4em 0}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:18px 0;box-shadow:0 2px 10px rgba(0,0,0,.04)}
   .btn{display:block;width:100%;border:0;border-radius:12px;background:var(--green);color:#fff;font-size:19px;font-weight:800;padding:18px;cursor:pointer;text-align:center;text-decoration:none;box-shadow:0 4px 0 var(--green2)}
   .btn:active{transform:translateY(2px);box-shadow:0 2px 0 var(--green2)}
-  .opt{display:block;width:100%;text-align:left;background:#fff;border:2px solid var(--line);border-radius:10px;padding:14px 16px;margin:8px 0;font-size:17px;cursor:pointer}
+  .risk{text-align:center;font-size:14px;color:var(--muted);margin:10px 0 0}
+  .opt{display:block;width:100%;text-align:left;background:#fff;border:2px solid var(--line);border-radius:10px;padding:14px 16px;margin:8px 0;font-size:17px;cursor:pointer;color:var(--ink)}
   .opt:hover{border-color:var(--green)}
   .progress{height:8px;background:#e8e6dd;border-radius:9px;overflow:hidden;margin-bottom:14px}
   .progress i{display:block;height:100%;background:var(--green);width:0;transition:width .3s}
   .q{font-size:21px;font-weight:700;margin:4px 0 10px}
-  .hidden{display:none}
+  .hidden{display:none!important}
+  .trust{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--muted);margin:-6px 0 6px}
+  .micro{font-size:14px;color:#444;text-align:center;font-style:italic;margin:6px 0 0}
   .score{font-size:56px;font-weight:900;color:var(--green);text-align:center;line-height:1}
+  .look{list-style:none;padding:0;margin:12px 0 0;text-align:left}
+  .look li{padding:10px 0 10px 30px;position:relative;border-top:1px solid var(--line);font-size:16px}
+  .look li:before{content:"→";position:absolute;left:4px;color:var(--green);font-weight:900}
+  .look small{color:var(--muted)}
+  label{font-size:14px;font-weight:600;display:block;margin-top:8px}
+  input{width:100%;padding:15px;font-size:17px;border:2px solid var(--line);border-radius:10px;margin:4px 0}
   .stat{display:flex;gap:12px;flex-wrap:wrap}
   .stat div{flex:1 1 180px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
   .stat b{display:block;font-size:26px;color:var(--green)}
+  ol.why{padding-left:22px}ol.why li{margin:10px 0}
   ul.check{list-style:none;padding:0}
   ul.check li{padding:8px 0 8px 32px;position:relative;border-bottom:1px solid var(--line)}
   ul.check li:before{content:"✓";position:absolute;left:4px;color:var(--green);font-weight:900}
   .price{text-align:center}
-  .price s{color:#999;font-size:22px}
   .price .now{font-size:60px;font-weight:900;color:var(--ink);line-height:1}
   .story{border-left:4px solid var(--gold);padding:4px 0 4px 14px;margin:16px 0}
   .story small{color:var(--muted)}
   .guar{display:flex;gap:16px;align-items:center}
   .seal{flex:none;width:86px;height:86px;border-radius:50%;background:var(--gold);color:#3a2a00;font-weight:900;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;line-height:1.1}
+  .mock{display:block;width:100%;max-width:420px;margin:0 auto 6px}
+  .pages{display:flex;gap:8px;justify-content:center;margin:6px 0 4px}
+  .pages img{width:31%;border:1px solid var(--line);border-radius:6px;box-shadow:0 3px 10px rgba(0,0,0,.12);background:#fff}
   details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:8px 0}
   summary{font-weight:700;cursor:pointer}
-  footer{font-size:12px;color:var(--muted);padding:30px 0 50px}
+  #sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(247,246,241,.96);border-top:1px solid var(--line);z-index:9}
+  #sticky .btn{padding:15px;font-size:17px}
+  @media(min-width:601px){#sticky{display:none!important}}
+  footer{font-size:12px;color:var(--muted);padding:30px 0 110px}
+  footer a{color:var(--muted)}
 </style>
 </head>
 <body>
-<div class="bar">U.S. states hold about $70 billion in unclaimed money. Some of it may be yours.</div>
+<div class="bar" id="topbar">U.S. states hold about $70 billion in unclaimed money. Some of it may be yours.</div>
 
 <div class="wrap">
-<header>
-  <div class="kicker">60-second check</div>
-  <h1>Is there <em>money in your name</em> you don't know about?</h1>
-  <p class="sub">Old paychecks. Forgotten bank accounts. Life insurance from a parent. Savings bonds from when you were a kid. Answer 6 quick questions to see your risk factors.</p>
+<header id="hero">
+  <div class="kicker" id="kicker">60-second check</div>
+  <h1>Is the state holding <em>money in your name</em>?</h1>
+  <p class="sub">Old paychecks, forgotten accounts, a parent's life insurance. Answer 6 quick questions to see your risk factors.</p>
 </header>
 
 <!-- QUIZ -->
@@ -61,22 +77,27 @@
   <div class="progress"><i id="pg"></i></div>
   <div id="qbox"></div>
 </div>
+<div class="trust" id="trust"><span>✓ Free</span><span>✓ No sign-up to start</span><span>✓ Independent guide, not a government site</span></div>
+<p class="micro" id="microproof">"She thought the letters were a scam. It was about $108,000 in unclaimed stock." (FOX 13 Tampa, Sept. 2025)</p>
 
+<!-- EMAIL -->
 <div class="card hidden" id="lead">
   <div class="kicker">Almost done</div>
-  <p class="q">Where should we send your result + your free "3 places to search first" checklist?</p>
+  <p class="q">Get your personal search list by email</p>
+  <p style="margin:0 0 6px">Your answers + the 3 free official sites to check first, so you can do it tonight.</p>
   <form id="leadform">
-    <input name="fields[name]" placeholder="First name" style="width:100%;padding:15px;font-size:17px;border:2px solid var(--line);border-radius:10px;margin:6px 0">
-    <input name="fields[email]" type="email" required placeholder="Email address" style="width:100%;padding:15px;font-size:17px;border:2px solid var(--line);border-radius:10px;margin:6px 0 12px">
-    <button class="btn" type="submit">SHOW MY RESULT →</button>
+    <label for="fn">First name</label>
+    <input id="fn" name="fields[name]" autocomplete="given-name">
+    <label for="em">Email</label>
+    <input id="em" name="fields[email]" type="email" inputmode="email" autocomplete="email" required>
+    <button class="btn" type="submit" style="margin-top:12px">EMAIL ME MY SEARCH LIST →</button>
   </form>
   <p style="text-align:center;margin:12px 0 0"><a href="#" id="skip" style="color:var(--muted);font-size:14px">Skip, just show my result</a></p>
   <p style="font-size:12px;color:var(--muted);text-align:center">No spam. Unsubscribe anytime. <a href="privacy.html" style="color:var(--muted)">Privacy</a></p>
 </div>
 
 <div class="card hidden" id="loading" style="text-align:center">
-  <p class="q">Checking your answers…</p>
-  <p id="lstep" style="color:var(--muted)">Comparing with the most common unclaimed property types</p>
+  <p class="q">Scoring your answers…</p>
 </div>
 
 <!-- RESULT + OFFER -->
@@ -84,56 +105,79 @@
   <div class="card" style="text-align:center">
     <div class="kicker">Your result</div>
     <div class="score"><span id="sc">0</span>/6</div>
-    <p class="q">risk factors for unclaimed money</p>
-    <p id="msg"></p>
+    <p class="q">common risk factors for unclaimed money</p>
+    <p id="msg" style="text-align:left;margin-bottom:0"></p>
+    <ul class="look" id="look"></ul>
   </div>
 
-  <h2>Why money gets "lost" (and goes to the state)</h2>
-  <p>When a bank, employer, insurer or utility can't reach you, the law requires them to hand that money to the state. The state keeps it, sometimes for decades, until you or your heirs claim it. Nobody calls you. Nobody sends a letter to your new address. <b>You have to go look.</b></p>
-  <div class="stat">
-    <div><b>33 million</b>Americans have unclaimed property (NAUPA)</div>
-    <div><b>$4.49B</b>returned by states in FY2024 (NAUPA)</div>
-    <div><b>$0</b>to claim officially, always</div>
+  <div class="card" id="next">
+    <div class="kicker">Your next step</div>
+    <img class="mock" src="img/playbook.png" alt="The Lost Money Playbook PDF" style="max-width:240px">
+    <p class="q" style="margin-top:4px;text-align:center">Search every place on your list in about 30 minutes</p>
+    <p>The Lost Money Playbook gives you the exact order to search all the official sites (state and federal), the name tricks that surface hidden records, and the letters to send. Searching and claiming stay free. You only pay for the map.</p>
+    <a class="btn cta" href="#CHECKOUT_URL" data-ic>GET MY PLAYBOOK FOR $9 →</a>
+    <p class="risk">Instant PDF · 60-day money-back guarantee · Official claims are always free</p>
   </div>
 
-  <h2>Real people. Real money. Found by searching.</h2>
+  <h2>Why most people search once and find nothing</h2>
+  <ol class="why">
+    <li><b>One state.</b> Money goes to the state of your <i>last known address</i>, which may not be where you live now.</li>
+    <li><b>One name.</b> Records sit under maiden names, middle names and misspellings ("Jon/John", "Mc/Mac").</li>
+    <li><b>Hidden amounts.</b> Many state sites only show "over $100" or "over $250". A Colorado listing that said "over $250" turned out to be nearly $30,000 (Fox News opinion column, June 2026).</li>
+    <li><b>Federal money isn't on state sites.</b> IRS refunds, savings bonds, pensions (PBGC), back wages (DOL), FHA refunds, failed-bank deposits (FDIC) and VA insurance each have their own search.</li>
+  </ol>
+
+  <h2>Real people. Real money. As reported by local news.</h2>
   <div id="stories">
     <div class="story"><b>"Barbara," 88, Bradenton, Florida: about $108,000</b><br>Unclaimed stock from a company she worked for 30+ years earlier. She thought the letters were a scam, and a police detective found the real state notice in her junk mail. Claimed free on Florida's official site.<br><small>FOX 13 Tampa, Sept. 2025</small></div>
-<div class="story"><b>Susan Ballard, Denham Springs, Louisiana: $44,666.42</b><br>Handed a check by the Louisiana State Treasurer from the state's unclaimed property program.<br><small>Louisiana First, Aug. 2025</small></div>
-<div class="story"><b>Jermaine Williams, Hammond, Louisiana: $24,871.06</b><br>Surprised with an unclaimed property check at a local Kiwanis Club meeting.<br><small>WBRZ Baton Rouge, Dec. 2024</small></div>
-<div class="story"><b>A Colorado man: nearly $30,000</b><br>A forgotten state tax refund. The state database only showed "over $250."<br><small>Fox News, June 2026</small></div>
-<div class="story"><b>Vicki David, Santa Rosa, California: $660</b><br>Her late husband's forgotten PayPal balance, reported to the state. Not every find is huge, but it's money that was hers.<br><small>ABC7 "7 On Your Side," Oct. 2022</small></div>
-<p class="small" style="color:#5d6670;font-size:13px">Stories as reported by the news outlets named. Individual results vary widely: the median claim is small, and many people find nothing.</p>
+    <div class="story"><b>An Ohio family: hundreds of savings bonds from their late parents</b><br>Their parents' safe deposit box had been turned over to the state. The claim stalled until a local news team asked questions. Then a box arrived with savings bonds, cash and collectibles.<br><small>FOX 8 Cleveland, 2025</small></div>
+    <div class="story"><b>Susan Ballard, Denham Springs, Louisiana: $44,666.42</b><br>Handed a check by the Louisiana State Treasurer from the state's unclaimed property program.<br><small>Louisiana First, Aug. 2025</small></div>
+    <div class="story"><b>Jermaine Williams, Hammond, Louisiana: $24,871.06</b><br>Surprised with an unclaimed property check at a local Kiwanis Club meeting.<br><small>WBRZ Baton Rouge, Dec. 2024</small></div>
+    <div class="story"><b>A Colorado man: nearly $30,000</b><br>A forgotten state tax refund. The state database only showed "over $250."<br><small>Fox News (opinion column), June 2026</small></div>
+    <div class="story"><b>Vicki David, Santa Rosa, California: $660</b><br>Her late husband's forgotten PayPal balance, reported to the state. Not every find is huge, but it's money that was hers.<br><small>ABC7 "7 On Your Side," Oct. 2022</small></div>
+    <p style="color:#5d6670;font-size:13px">Stories as reported by the news outlets named. Individual results vary widely: the median claim is small, and many people find nothing.</p>
   </div>
 
-  <h2>The problem: most people search wrong</h2>
-  <p>They type their name into one website, see nothing, and give up. But money hides in <b>other states</b>, under a <b>misspelled name</b>, under a <b>maiden name</b>, under a <b>parent who passed away</b>, or in <b>federal programs</b> that the state sites don't show at all.</p>
+  <div class="stat">
+    <div><b>~$70 billion</b>held by U.S. states in unclaimed property (NAUPA)</div>
+    <div><b>1 in 7</b>Americans, about 33 million people, have some (NAUPA, via CNBC)</div>
+    <div><b>$4.49B</b>returned by states in FY2024 (NAUPA)</div>
+  </div>
 
-  <div class="card">
+  <div class="card" style="margin-top:28px">
     <div class="kicker">Introducing</div>
-    <h2 style="margin-top:.2em">The Lost Money Playbook</h2>
-    <p>The complete 30-minute method to search <b>every</b> place money in your name could be sitting, and to claim it yourself, for free.</p>
+    <h2 style="margin-top:.2em">The Lost Money Playbook: The 30-Minute Search Method</h2>
+    <img class="mock" src="img/playbook.png" alt="The Lost Money Playbook">
+    <div class="pages"><img src="img/page-federal.png" alt="Federal sources chapter"><img src="img/page-template.png" alt="Letter template"><img src="img/page-tracker.png" alt="Search Tracker"></div>
+    <p class="risk" style="margin-bottom:12px"><b>12 pages · 7 short chapters · 3 ready-to-send letters · printable Search Tracker.</b> Read it tonight, search in about 30 minutes.</p>
     <ul class="check">
       <li><b>The 30-Minute Search:</b> the exact order to search state databases, including the name tricks that uncover hidden records</li>
       <li><b>7 federal sources most people never check:</b> IRS refunds, savings bonds, pensions, back wages, FHA refunds, failed banks, VA insurance</li>
       <li><b>The family search:</b> how to find life insurance and money left by parents and grandparents, and how heirs claim it</li>
-      <li><b>Settlements &amp; refunds:</b> how to find payouts you're eligible for right now</li>
+      <li><b>Settlements &amp; refunds:</b> how to find payouts you may be eligible for right now</li>
       <li><b>3 ready-to-send letter templates</b> for employers, insurers and state offices</li>
       <li><b>The Search Tracker</b>, so you don't miss the one place your money was</li>
       <li><b>Scam shield:</b> how to never pay anyone to get your own money</li>
     </ul>
-    <div class="price">
-      <div class="kicker">Launch price</div>
-      <div class="now">$9</div>
-      <p style="color:var(--muted);margin-top:4px">One-time payment · Instant PDF download</p>
-    </div>
-    <!-- CHECKOUT: troque o href pelo link de checkout da Hotmart -->
-    <a class="btn" href="#CHECKOUT_URL" onclick="if(window.fbq)fbq('track','InitiateCheckout')">YES, SHOW ME WHERE TO LOOK →</a>
-  </div>
 
-  <div class="card guar">
-    <div class="seal">60-DAY<br>MONEY<br>BACK</div>
-    <div><b>Search with it for 60 days.</b> If you don't think this playbook was worth far more than $9, email us and get every cent back. No questions asked.</div>
+    <div style="background:#f7f6f1;border-radius:10px;padding:14px 16px;margin:16px 0">
+      <p style="margin:0 0 8px"><b>Searching is free. Knowing where to search is the hard part.</b></p>
+      <p style="margin:0 0 8px">One free site doesn't show every state, every name you've used, or federal money like old IRS refunds, savings bonds, pensions and back wages. The Playbook puts all of it in order, so one evening covers what most people never get to.</p>
+      <p style="margin:0">Some "finder" companies offer to do this for a percentage of what they recover. With this guide you can almost always do it yourself, for free.</p>
+    </div>
+
+    <div class="guar" style="margin:16px 0">
+      <div class="seal">60-DAY<br>"WORTH IT"<br>GUARANTEE</div>
+      <div><b>The 60-Day "Worth It" Guarantee.</b> Use the Playbook for 60 days. If you don't feel it was worth far more than $9, email us and get every cent back. No questions asked. (Finding money isn't required; nobody can promise that.)</div>
+    </div>
+
+    <div class="price">
+      <div class="kicker">One-time price</div>
+      <div class="now">$9</div>
+      <p style="color:var(--muted);margin-top:4px">Instant PDF download</p>
+    </div>
+    <a class="btn cta" href="#CHECKOUT_URL" data-ic>GET MY PLAYBOOK FOR $9 →</a>
+    <p class="risk">Instant PDF · 60-day money-back guarantee · Official claims are always free</p>
   </div>
 
   <h2>Questions</h2>
@@ -142,16 +186,31 @@
   <details><summary>Is this a government service?</summary><p>No. This is an independent educational guide, not affiliated with any state or federal agency. It sends you only to official websites to search and claim.</p></details>
   <details><summary>How do I receive it?</summary><p>Immediately after payment you get an email with your PDF download link.</p></details>
 
-  <a class="btn" style="margin-top:20px" href="#CHECKOUT_URL">GET THE PLAYBOOK FOR $9 →</a>
+  <a class="btn cta" style="margin-top:20px" href="#CHECKOUT_URL" data-ic>GET MY PLAYBOOK FOR $9 →</a>
+  <p class="risk">Instant PDF · 60-day money-back guarantee · Official claims are always free</p>
 </div>
 
 <footer>
-  <p>The Lost Money Playbook is an independent educational product. Not affiliated with, endorsed by or connected to NAUPA, MissingMoney.com, any state unclaimed property program, the IRS, U.S. Treasury, or any government agency. Searching for and claiming unclaimed property through official sites is free. Results vary; many people find no unclaimed property. This site is not part of Facebook or Meta Platforms, Inc.</p>
-  <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></p>
+  <p>The Lost Money Playbook is an independent educational product. Not affiliated with, endorsed by or connected to NAUPA, MissingMoney.com, any state unclaimed property program, the IRS, U.S. Treasury, or any government agency. Searching for and claiming unclaimed property through official sites is free. Results vary; many people find no unclaimed property. News stories are summarized from the outlets named and do not endorse this product. This site is not part of Facebook or Meta Platforms, Inc.</p>
+  <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a> · <a href="mailto:support@YOURDOMAIN.com">Contact</a></p>
 </footer>
 </div>
 
+<div id="sticky" class="hidden"><a class="btn cta" href="#CHECKOUT_URL" data-ic>GET MY PLAYBOOK FOR $9 →</a></div>
+
 <script>
+// Abertura conforme o anúncio: ?s=fl | co | oh
+const OPEN={
+ fl:["An 88-year-old Florida woman thought the letters were a scam. It was about $108,000. (FOX 13 Tampa)","She checked. Could you have money waiting too?"],
+ co:["The state site said \"over $250.\" It was nearly $30,000. (Fox News)","Most people see \"over $100\" and never claim it"],
+ oh:["A family's late parents' safe deposit box went to the state. Then a box of savings bonds came back. (FOX 8 Cleveland)","Lost a parent, grandparent or spouse? Heirs can claim."]
+};
+const s=new URLSearchParams(location.search).get('s');
+if(OPEN[s]){document.getElementById('topbar').textContent=OPEN[s][0];document.getElementById('kicker').textContent=OPEN[s][1];}
+
+// CHECKOUT: troque #CHECKOUT_URL pelo link da Hotmart (em todos os botões)
+document.querySelectorAll('[data-ic]').forEach(a=>a.addEventListener('click',()=>{if(window.fbq)fbq('track','InitiateCheckout')}));
+
 const Q=[
  {q:"How many states have you lived or worked in?",o:[["Just one",0],["2 or 3",1],["4 or more",1]]},
  {q:"Have you moved in the last 10 years?",o:[["Yes, at least once",1],["No",0]]},
@@ -160,26 +219,34 @@ const Q=[
  {q:"Have you ever used another last name (maiden/married)?",o:[["Yes",1],["No",0]]},
  {q:"Have you ever closed a bank account, or forgotten about one?",o:[["Yes / Not sure",1],["No",0]]}
 ];
-let i=0,score=0;
+const LOOK=[
+ '<b>More than one state.</b> Each state keeps its own list. Search every state you\'ve lived, worked or banked in, not just today\'s. <small>(Playbook, Ch. 2)</small>',
+ '<b>You moved.</b> Final checks and refunds often went to an old address. Search the states you moved <i>from</i>. <small>(Ch. 2)</small>',
+ '<b>Job changes.</b> Final paychecks, old retirement plans and group life insurance can go unclaimed. Check state lists, the PBGC pension search, and send Letter Template 1 to old employers. <small>(Ch. 2, 3 + Templates)</small>',
+ '<b>A family member passed away.</b> Search their name too, plus the free NAIC Life Insurance Policy Locator. Heirs can claim. <small>(Ch. 4)</small>',
+ '<b>Another last name.</b> Records are filed under the name the company had. Search maiden, married and misspelled versions. <small>(Ch. 2)</small>',
+ '<b>A closed or forgotten account.</b> Inactive balances are sent to the state after a few years. <small>(Ch. 1)</small>'
+];
+let i=0,score=0;const ans=[];
 const qbox=document.getElementById('qbox'),pg=document.getElementById('pg');
 function render(){
   pg.style.width=(i/Q.length*100)+'%';
   const it=Q[i];
   qbox.innerHTML='<p style="color:#5d6670;margin:0">Question '+(i+1)+' of '+Q.length+'</p><p class="q">'+it.q+'</p>'+
     it.o.map((o,k)=>'<button class="opt" data-k="'+k+'">'+o[0]+'</button>').join('');
-  qbox.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{score+=it.o[+b.dataset.k][1];i++;i<Q.length?render():finish();});
+  qbox.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const v=it.o[+b.dataset.k][1];ans[i]=v;score+=v;i++;i<Q.length?render():finish();});
 }
 // MAILERLITE: cole aqui a URL "action" do formulário embutido do MailerLite
 const LEAD_ACTION='MAILERLITE_FORM_ACTION_URL';
 function finish(){
   pg.style.width='100%';
-  document.getElementById('quiz').classList.add('hidden');
+  ['quiz','trust','microproof'].forEach(id=>document.getElementById(id).classList.add('hidden'));
   document.getElementById('lead').classList.remove('hidden');
   const go=()=>{document.getElementById('lead').classList.add('hidden');showResult();};
   document.getElementById('skip').onclick=e=>{e.preventDefault();go();};
   document.getElementById('leadform').onsubmit=e=>{
     e.preventDefault();
-    const fd=new FormData(e.target);fd.append('fields[quiz_score]',score);
+    const fd=new FormData(e.target);fd.append('fields[quiz_score]',score);fd.append('fields[quiz_answers]',ans.join(''));
     if(LEAD_ACTION.startsWith('http'))fetch(LEAD_ACTION,{method:'POST',body:fd,mode:'no-cors'}).catch(()=>{});
     if(window.fbq)fbq('track','Lead');
     go();
@@ -187,18 +254,26 @@ function finish(){
 }
 function showResult(){
   const L=document.getElementById('loading');L.classList.remove('hidden');
-  const steps=["Checking state-move patterns…","Checking job-change patterns…","Checking family & inheritance factors…"];
-  steps.forEach((s,k)=>setTimeout(()=>document.getElementById('lstep').textContent=s,700*(k+1)));
   setTimeout(()=>{
     L.classList.add('hidden');
+    document.getElementById('hero').classList.add('hidden');
     document.getElementById('sc').textContent=score;
-    document.getElementById('msg').innerHTML= score>=3
-      ? "<b>You have several of the most common reasons money goes unclaimed.</b> People with your profile should search more than one state and include family members, exactly what the Playbook walks you through."
-      : "<b>You have some common risk factors.</b> Even one move or one job change can leave a check behind. A complete search takes about 30 minutes.";
+    const n=score;
+    document.getElementById('msg').innerHTML = n===0
+      ? "<b>You have few of the most common risk factors.</b> That's good news. A quick free search of your current state at unclaimed.org is still worth 5 minutes. Settlement and refund programs (Playbook, Ch. 5) don't depend on moving or changing jobs."
+      : n<=2
+      ? "<b>You have "+n+" common risk factor"+(n>1?"s":"")+".</b> Even one move or one job change can leave a check behind. Here's where your answers say to look:"
+      : "<b>You have several of the most common reasons money goes unclaimed.</b> Here's where your answers say to look:";
+    document.getElementById('look').innerHTML=LOOK.filter((_,k)=>ans[k]).map(x=>'<li>'+x+'</li>').join('');
     document.getElementById('offer').classList.remove('hidden');
     if(window.fbq)fbq('track','ViewContent');
     window.scrollTo({top:0,behavior:'smooth'});
-  },2900);
+    // botão fixo no celular, escondido quando um botão da página está visível
+    const st=document.getElementById('sticky');st.classList.remove('hidden');
+    const vis=new Set();
+    const io=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?vis.add(e.target):vis.delete(e.target));st.style.display=vis.size?'none':'';});
+    document.querySelectorAll('#offer [data-ic]').forEach(b=>io.observe(b));
+  },1000);
 }
 render();
 </script>
