@@ -14,6 +14,19 @@
 - O dono quer **automação máxima** e entregas prontas. Ele pode deixar o PC e o Mac ligados 24h.
 - **Cuidado com direitos autorais** é prioridade explícita do dono.
 
+## 1.1 Decisões mais recentes do dono (prioridade máxima)
+- **Narração: continuar com ElevenLabs** (qualidade de áudio é prioridade). Usar a voz "Nassif - Documentary, History & Thriller"
+  (voice_id `acdKA5HckGxoxxvy40dA`, modelo `eleven_v4`) para PT-BR; para o canal em inglês, escolher/testar uma voz EN equivalente.
+  Sempre **1 take** por trecho. O plano Pro (600k créditos/mês) cobre ~20 vídeos de 30 min/mês só de narração, sem custo extra.
+  No PC: usar o conector ElevenLabs do Claude ou a API com a chave em variável de ambiente (`ELEVENLABS_API_KEY`), **nunca** no repositório.
+- **Todo o resto local e grátis** na RTX 5090: imagens, clipes de vídeo, música, SFX, montagem.
+- **Primeiro passo:** inventariar o que **já está instalado no PC** (geradores de vídeo/imagem baixados do GitHub, ComfyUI, Pinokio etc.),
+  testar e comparar com as opções da seção 4; ficar com o que der a melhor qualidade com licença comercial.
+- **Pesquisa contínua:** o Claude no PC tem internet sem os bloqueios da nuvem — deve seguir pesquisando (GitHub, Hugging Face,
+  Reddit r/StableDiffusion r/comfyui r/LocalLLaMA, Civitai, fóruns, YouTube) novos modelos/materiais grátis de uso comercial
+  e registrar achados em `docs/pesquisa/achados.md` (nome, link, licença verificada, teste feito, veredito).
+- Padrão de qualidade: **igual ou melhor que a amostra D.B. Cooper** ("ficou perfeito", segundo o dono).
+
 ## 2. O que já existe neste repositório
 - `dbcooper-amostra/` — amostra de 3min11s em **PT-BR** sobre o caso D.B. Cooper. **ESTILO APROVADO pelo dono ("amei")** — usar como padrão de qualidade e identidade visual dos vídeos (variando estrutura entre vídeos).
   - `roteiro.json` — roteiro em 8 segmentos.
