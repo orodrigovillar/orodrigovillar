@@ -1,0 +1,10 @@
+# Exemplo: canal faceless de finanças (nicho de RPM alto)
+[fala] Você sabia que existe dinheiro esquecido no seu nome?
+[numero:R$ 8 bilhões] É isso que os brasileiros ainda não sacaram dos bancos.
+[pensa] Mas por que ninguém fala sobre isso?
+[triste|grafico_desce] Porque cada real esquecido é lucro parado para alguém.
+[comemora|ideia] A boa notícia: consultar leva menos de cinco minutos.
+[dois:fala] Eu mostrei para um amigo e ele achou mais de mil reais.
+[aponta|celular] Entre no site oficial do governo pelo celular.
+[choque|alerta] E cuidado: nunca pague para alguém consultar por você.
+[comemora] Se te ajudou, se inscreva no canal.
