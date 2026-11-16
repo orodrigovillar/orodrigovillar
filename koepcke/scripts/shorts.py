@@ -16,6 +16,11 @@ import render as r
 
 VW, VH, FPS = 1080, 1920, 30
 
+# no vertical, textos alinhados a esquerda seriam cortados: mantem so os centralizados
+for _s in r.SH:
+    if _s.get('ov'):
+        _s['ov'] = [o for o in _s['ov'] if o[0] in ('stat', 'title', 'quote', 'chapter')]
+
 def find(seg, word, nth=1, end=False):
     c = 0
     for w in r.words[seg]:
