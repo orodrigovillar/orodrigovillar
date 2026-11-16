@@ -47,7 +47,7 @@ t = T0
 for s in SEGS:
     seg_start[s] = t
     wf = A('words_scribe', s + '.json') if os.path.exists(A('words_scribe', s + '.json')) else A('words', s + '.json')
-    ws = [w for w in json.load(open(wf))['words'] if w.get('type', 'word') == 'word' and not w['text'].startswith('(')]
+    ws = [w for w in json.load(open(wf))['words'] if w.get('type', 'word') == 'word' and not w['text'].startswith(('(', '['))]
     words[s] = [dict(w, start=w['start'] + t, end=w['end'] + t) for w in ws]
     t += dur(A('audio', s + '.mp3')) + GAP.get(s, 0)
 NARR_END = t
@@ -89,12 +89,15 @@ CH = lambda n, title: ('chapter', n, title)
 # --- cold open
 shot(0.0, 'video', 'v1', x=0, zoom=(1.0, 1.08), flash=0.0)
 shot(S('s01', 'Somewhere'), 'img', 'k01', move='in', ov=[('type', 'DECEMBER 24, 1971\nABOVE THE PERUVIAN AMAZON')])
-shot(S('s01', 'Not'), 'img', 'k27', move='fall', x=0.25)
+shot(S('s01', 'Not'), 'video', 'v1', off=2.5, x=0.15, zoom=(1.1, 1.2))
+shot(S('s01', 'There'), 'img', 'k26', move='shake', x=0.08, hit=True)
+shot(S('s01', 'She', 1), 'img', 'k27', move='fall', x=0.25, wind=True)
+shot(S('s01', 'almost'), 'img', 'k33', move='push', focus=(0.5, 0.35), x=0.3)
 shot(S('s01', 'Below'), 'img', 'k02', move='dive', x=0.3)
 shot(S('s01', 'Ninety-two'), 'img', 'k03', dim=0.45, x=0.2, ov=[('stat', '92', 'PEOPLE ON BOARD', (0, 92, 1.0))])
 shot(S('s01', 'Ninety-one'), 'img', 'k03', dim=0.4, move='out', x=0.15, ov=[('stat', '91', 'NEVER CAME HOME', None)], hit=True)
 shot(S('s01', 'Her'), 'img', 'k04', move='in', dim=0.55, x=0.8, ov=[('title', 'THE GIRL WHO FELL FROM THE SKY', 'THE TRUE STORY OF JULIANE KOEPCKE')], hit=True)
-shot(S('s01', 'And'), 'img', 'k40', move='in_r')
+shot(S('s01', 'extraordinary'), 'img', 'k40', move='in_r')
 # --- promise
 shot(segin('s02'), 'img', 'k31', move='push', focus=(0.35, 0.5), x=0.7)
 shot(S('s02', 'How'), 'img', 'k45', move='in')
@@ -188,6 +191,7 @@ shot(S('s11', 'But', 2), 'img', 'k02', move='out', dim=0.8)
 shot(S('s11', 'Soon'), 'img', 'k40', move='out', dim=0.75)
 # --- vultures
 shot(segin('s12'), 'img', 'k51', move='push', focus=(0.55, 0.45), x=0.8)
+shot(S('s12', 'Something'), 'img', 'k55', move='in', dim=0.7)
 shot(S('s12', 'Soon'), 'img', 'k31', move='push', focus=(0.4, 0.55), dim=0.7)
 shot(S('s12', 'With'), 'img', 'k04', move='in', dim=0.8)
 shot(S('s12', 'It', 2), 'img', 'k03', move='out', dim=0.7)
@@ -806,7 +810,7 @@ def build_audio(path):
         fc.append(f'[{i}:a]aresample=48000,aformat=channel_layouts=stereo,aloop=loop={int(L // D) + 1}:size={int(D * 48000)},atrim=0:{L:.2f},{extra}'
                   f'afade=t=in:d=2,afade=t=out:st={L - 2:.2f}:d=2,volume={vol},adelay={ms}|{ms},apad=whole_dur={END:.2f}[{lab}]')
         fx.append(f'[{lab}]')
-    bed('sfx_cabin.mp3', at('s04', 'And', 2), t_break + 0.1, 0.30)
+    bed('sfx_cabin.mp3', at('s04', 'And'), t_break + 0.1, 0.30)
     bed('sfx_jungle.mp3', at('s08', 'When') - 0.5, segin('s16') + 1.0, 0.30)
     L = segin('s14') - segin('s13')
     fc.append(f'anoisesrc=color=pink:amplitude=0.35:duration={L:.2f}:sample_rate=48000,highpass=f=900,lowpass=f=7000,'
