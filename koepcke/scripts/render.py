@@ -459,7 +459,7 @@ def map_frame(name, lt, L):
         d.polygon([(xe + px * math.cos(ang) - py * math.sin(ang), ye + px * math.sin(ang) + py * math.cos(ang)) for px, py in pts], fill=(255, 240, 230, 255))
         if p > 0.95:
             q = ease((lt - 0.4 - L * 0.6) / 0.8)
-            shadow_text(d, (W / 2, H - BAR - 120), 'UNDER ONE HOUR · OVER THE ANDES', font('oswald', 44, 600), fill=(240, 220, 210, int(255 * q)), anchor='mm')
+            shadow_text(d, (W / 2, H - BAR - 240), 'UNDER ONE HOUR · OVER THE ANDES', font('oswald', 44, 600), fill=(240, 220, 210, int(255 * q)), anchor='mm')
     for nm, la, lo, kind in m['pts']:
         cx, cy = P(la, lo)
         a = ease((lt - (0.3 if kind == 'city' else 1.0)) / 0.5)
